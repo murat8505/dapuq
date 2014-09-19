@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Opium Makassar</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="imgdesc">imgdesc</string>
+    <string name="drawer_open">Buka</string>
+    <string name="drawer_close">Tutup</string>
+    <string-array name="alamat" >
+        <item>ENTERTAINMENT</item>
+        <item>\tMUSIK</item>
+        <item>\tMOVIE</item>
+        <item>\tSPORT</item>
+        <item>ART</item>
+        <item>\tPHOTO</item>
+        <item>\tDESIGN</item>
+        <item>\tVIDEO</item>
+        <item>LIFE STYLE</item>
+        <item>\tFASHION</item>
+        <item>\tHANGOUT</item>
+        <item>\tPLACE</item>
+        <item>\tGADGET</item>
+        <item>OPIUMBABES</item>
+        <item>SCHOOLISM</item>
+        <item>\tSCHOOL</item>
+        <item>\tNEWS</item>
+        <item>\tPROFILE</item>
+        <item>MORE</item>
+        <item>\tABOUT</item>
+        <item>\tCONTACT</item>        
+    </string-array>
+
+</resources>

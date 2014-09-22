@@ -1,7 +1,12 @@
 package com.sendmedia.opiummks;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -10,17 +15,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.ArrayAdapter;
-import android.widget.SlidingDrawer;
- 
 public class MainActivity extends ActionBarActivity  {
  
+	//deklarasi title, icon dan url menggunakan string array
+	String[] menutitles;
+	TypedArray menuIcons;
+	String[] pageUrl;
+	
+	
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private ListView sliding_listview;
-    private String mTitle;
+    
+    private CharSequence mDrawerTitle;
+	private CharSequence mTitle;
+	
+	private List<RowItem> rowItems;
+	private CustomAdapter adapter;
     
     @SuppressLint("NewApi")
 	@Override
@@ -28,124 +40,112 @@ public class MainActivity extends ActionBarActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
  
-        mTitle = "Opium Makassar";
+        mTitle = "OPIUM MAKASSAR";
+        mTitle = mDrawerTitle = getTitle();
+        
+        //menampung string array ke variable
+        menutitles = getResources().getStringArray(R.array.titles);
+		menuIcons = getResources().obtainTypedArray(R.array.icons);
+		pageUrl = getResources().getStringArray(R.array.pageurl);
         
         //tampilan drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         sliding_listview = (ListView) findViewById(R.id.drawer_list);
   
         
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-                R.drawable.ic_navigation_drawer, R.string.drawer_open,
-                R.string.drawer_close) {
+        rowItems = new ArrayList<RowItem>();
+        //add menu menggunakan list view custom adapter
+		for (int i = 0; i < menutitles.length; i++) {
+			RowItem items = new RowItem(menutitles[i], menuIcons.getResourceId(
+					i, -1), pageUrl[i]);
+			rowItems.add(items);
+		}
+		
+		menuIcons.recycle();
+		
+		adapter = new CustomAdapter(getApplicationContext(), rowItems);
 
-            /** Called when drawer is closed */
-            public void onDrawerClosed(View view) {
-                getSupportActionBar().setTitle(mTitle);
-                supportInvalidateOptionsMenu();
+		sliding_listview.setAdapter(adapter);
 
-            }
-
-            /** Called when a drawer is opened */
-            public void onDrawerOpened(View drawerView) {
-            	getSupportActionBar().setTitle("Opium Makassar");
-                supportInvalidateOptionsMenu();
-            }
-
-        };
-     // Setting DrawerToggle on DrawerLayout
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-
-        //load string array
-        String[] alamat = getResources().getStringArray(
-                R.array.alamat);
-        
-        // Creating an ArrayAdapter to add items to the listview mDrawerList
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, 
-                R.layout.list_item, R.id.list_menu , alamat);
-
-        // Setting the adapter on mDrawerList
-        sliding_listview.setAdapter(adapter);
-
-        // Enabling Home button
+		sliding_listview.setOnItemClickListener(new SlideitemListener());
+		
+		// Enabling Home button
         getSupportActionBar().setHomeButtonEnabled(true);
 
         // Enabling Up navigation
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        
+        
+        
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+				R.drawable.ic_drawer, R.string.app_name,
+				R.string.app_name) {
+			public void onDrawerClosed(View view) {
+				getSupportActionBar().setTitle(mTitle);
+				// calling onPrepareOptionsMenu() to show action bar icons
+				supportInvalidateOptionsMenu();
+			}
 
-        // Setting item click listener for the listview mDrawerList
-        sliding_listview.setOnItemClickListener(new OnItemClickListener() {
+			public void onDrawerOpened(View drawerView) {
+				getSupportActionBar().setTitle(mDrawerTitle);
+				// calling onPrepareOptionsMenu() to hide action bar icons
+				supportInvalidateOptionsMenu();
+			}
+		};
+		mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                    int position, long id) {
+		if (savedInstanceState == null) {
+			// on first time display view for first nav item
+			updateDisplay(0);
 
-                // Getting an array of rivers
-                String[] menuItems = getResources().getStringArray(R.array.alamat);
-
-                // Currently selected river
-                mTitle = menuItems[position];
-
-
-                // Closing the drawer
-                mDrawerLayout.closeDrawer(sliding_listview);
-
-            }
-
-        });
+		}
  
     }
+    
+    class SlideitemListener implements ListView.OnItemClickListener {
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position,
+				long id) {
+			updateDisplay(position);
+		}
+
+	}
+    
+	private void updateDisplay(int position) {
+
+		//add url dari string array
+		String url = rowItems.get(position).getPageUrl();
+
+		
+		//initialisasi web view fragment
+		android.support.v4.app.Fragment fragment = new MyWebViewFragment();
+
+		//menambahkan string url
+		Bundle bundle = new Bundle();
+		bundle.putString("url", url);
+
+		fragment.setArguments(bundle);
+
+		//menampilkan web view fragment ke activity_main.xml
+		android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+		fragmentManager.beginTransaction()
+				.replace(R.id.content_frame, fragment).commit();
+
+		//set title action bar dari method set title
+		setTitle(menutitles[position]);
+		
+		//close sliding menu setelah link list view di klik
+		mDrawerLayout.closeDrawer(sliding_listview);
+
+	}
  
-    protected String getUrl(int position) {
-        switch (position) {
-        case 0:
-            return "";
-        case 1:
-            return "";
-        case 2:
-            return "";
-        case 3:
-            return "";
-        case 4:
-            return "";
-        case 5:
-            return "";
-        case 6:
-            return "";
-        case 7:
-            return "";
-        case 8:
-            return "";
-        case 9:
-            return "";
-        case 10:
-            return "";
-        case 11:
-            return "";
-        case 12:
-            return "";
-        case 13:
-            return "";
-        case 14:
-            return "";
-        case 15:
-            return "";
-        case 16:
-            return "";
-        case 17:
-            return "";
-        case 18:
-            return "";
-        case 19:
-            return "";
-        case 20:
-            return "";
-        case 21:
-            return "";
-        default:
-            return "";
-        }
-    }
+	@Override
+	public void setTitle(CharSequence title) {
+		
+		//mengirim value string mtitle ke update display
+		mTitle = title;
+		getSupportActionBar().setTitle(mTitle);
+	}
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -155,10 +155,17 @@ public class MainActivity extends ActionBarActivity  {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    	// toggle nav drawer on selecting action bar app icon/title
+		if (mDrawerToggle.onOptionsItemSelected(item)) {
+			return true;
+		}
+		// Handle action bar actions click
+		switch (item.getItemId()) {
+		case R.id.action_settings:
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
     }
 
     /** Called whenever we call supportInvalidateOptionsMenu(); */

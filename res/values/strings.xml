@@ -30,5 +30,24 @@
         <item>\tABOUT</item>
         <item>\tCONTACT</item>        
     </string-array>
+    
+    <!-- Title -->
+    <string-array name="titles">
+        <item>TutorialsBuzz</item>
+        <item>Facebook</item>
+        <item>Google Plus</item>
+    </string-array>
+    <!-- Page Url -->
+    <string-array name="pageurl">
+        <item>http://www.tutorialsbuzz.com</item>
+        <item>http://www.facebook.com</item>
+        <item>https://plus.google.com</item>
+    </string-array>
+    <!-- Icons -->
+    <array name="icons">
+        <item>@drawable/tutorrialsbuzz</item>
+        <item>@drawable/facebook</item>
+        <item>@drawable/facebook</item>
+    </array>
 
 </resources>

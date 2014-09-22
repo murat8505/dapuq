@@ -18,6 +18,15 @@ public final class R {
     }
     public static final class array {
         public static final int alamat=0x7f0c0000;
+        /**  Icons 
+         */
+        public static final int icons=0x7f0c0003;
+        /**  Page Url 
+         */
+        public static final int pageurl=0x7f0c0002;
+        /**  Title 
+         */
+        public static final int titles=0x7f0c0001;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -1084,10 +1093,11 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int bg_list=0x7f020057;
         public static final int facebook=0x7f020058;
-        public static final int ic_launcher=0x7f020059;
-        public static final int ic_navigation_drawer=0x7f02005a;
-        public static final int list_view_selector=0x7f02005b;
-        public static final int tutorrialsbuzz=0x7f02005c;
+        public static final int ic_drawer=0x7f020059;
+        public static final int ic_launcher=0x7f02005a;
+        public static final int ic_navigation_drawer=0x7f02005b;
+        public static final int list_view_selector=0x7f02005c;
+        public static final int tutorrialsbuzz=0x7f02005d;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1125,7 +1135,6 @@ containing a value of this type.
         public static final int image=0x7f050027;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
-        public static final int list_menu=0x7f05003f;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
@@ -1154,6 +1163,7 @@ containing a value of this type.
         public static final int top_action_bar=0x7f050020;
         public static final int up=0x7f050021;
         public static final int useLogo=0x7f050003;
+        public static final int webview1=0x7f05003f;
         public static final int withText=0x7f05000c;
     }
     public static final class integer {
@@ -1209,6 +1219,7 @@ containing a value of this type.
         public static final int activity_main=0x7f030018;
         public static final int list_item=0x7f030019;
         public static final int support_simple_spinner_dropdown_item=0x7f03001a;
+        public static final int web_fragment=0x7f03001b;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;

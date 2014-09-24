@@ -6,9 +6,9 @@ public class RowItem {
 	private int icon;
 	private String pageUrl;
 
-	public RowItem(String title, int icon, String pageUrl) {
+	public RowItem(String title, String pageUrl) {
 		this.title = title;
-		this.icon = icon;
+		//this.icon = icon;
 		this.pageUrl = pageUrl;
 	}
 

@@ -2,12 +2,16 @@
 <resources>
 
     <string name="app_name">Opium Makassar</string>
+    <string name="main_name">OPIUM MAKASSAR</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="imgdesc">imgdesc</string>
     <string name="drawer_open">Buka</string>
     <string name="drawer_close">Tutup</string>
-    <string-array name="alamat" >
+    
+    
+    <!-- Title -->
+    <string-array name="titles">
         <item>ENTERTAINMENT</item>
         <item>\tMUSIK</item>
         <item>\tMOVIE</item>
@@ -28,26 +32,38 @@
         <item>\tPROFILE</item>
         <item>MORE</item>
         <item>\tABOUT</item>
-        <item>\tCONTACT</item>        
-    </string-array>
-    
-    <!-- Title -->
-    <string-array name="titles">
-        <item>TutorialsBuzz</item>
-        <item>Facebook</item>
-        <item>Google Plus</item>
+        <item>\tCONTACT</item> 
     </string-array>
     <!-- Page Url -->
     <string-array name="pageurl">
-        <item>http://www.tutorialsbuzz.com</item>
-        <item>http://www.facebook.com</item>
-        <item>https://plus.google.com</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://opium-makassar.com/progress/entertainment.php</item>
     </string-array>
-    <!-- Icons -->
-    <array name="icons">
+    <!-- Icons don't using for now-->
+ <!--     <array name="icons">
         <item>@drawable/tutorrialsbuzz</item>
         <item>@drawable/facebook</item>
         <item>@drawable/facebook</item>
     </array>
+ -->
 
 </resources>

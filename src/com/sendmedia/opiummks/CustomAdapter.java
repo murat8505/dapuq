@@ -36,12 +36,12 @@ public class CustomAdapter extends BaseAdapter {
 		if (convertView == null) {
 			convertView = mInflater.inflate(R.layout.list_item, null);
 			holder = new ViewHolder();
-			holder.icon = (ImageView) convertView.findViewById(R.id.icon);
+			//holder.icon = (ImageView) convertView.findViewById(R.id.icon);
 			holder.title = (TextView) convertView.findViewById(R.id.title);
 
 			RowItem row_pos = rowItem.get(position);
 			// setting the image resource and title
-			holder.icon.setImageResource(row_pos.getIcon());
+			//holder.icon.setImageResource(row_pos.getIcon());
 			holder.title.setText(row_pos.getTitle());
 			convertView.setTag(holder);
 

@@ -17,16 +17,12 @@ public final class R {
         public static final int abc_slide_out_top=0x7f040005;
     }
     public static final class array {
-        public static final int alamat=0x7f0c0000;
-        /**  Icons 
-         */
-        public static final int icons=0x7f0c0003;
         /**  Page Url 
          */
-        public static final int pageurl=0x7f0c0002;
+        public static final int pageurl=0x7f0c0001;
         /**  Title 
          */
-        public static final int titles=0x7f0c0001;
+        public static final int titles=0x7f0c0000;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -1093,11 +1089,12 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int bg_list=0x7f020057;
         public static final int facebook=0x7f020058;
-        public static final int ic_drawer=0x7f020059;
-        public static final int ic_launcher=0x7f02005a;
-        public static final int ic_navigation_drawer=0x7f02005b;
-        public static final int list_view_selector=0x7f02005c;
-        public static final int tutorrialsbuzz=0x7f02005d;
+        public static final int garis=0x7f020059;
+        public static final int ic_drawer=0x7f02005a;
+        public static final int ic_launcher=0x7f02005b;
+        public static final int ic_navigation_drawer=0x7f02005c;
+        public static final int list_view_selector=0x7f02005d;
+        public static final int tutorrialsbuzz=0x7f02005e;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1265,12 +1262,13 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
-        public static final int action_settings=0x7f0a000f;
+        public static final int action_settings=0x7f0a0010;
         public static final int app_name=0x7f0a000d;
-        public static final int drawer_close=0x7f0a0012;
-        public static final int drawer_open=0x7f0a0011;
-        public static final int hello_world=0x7f0a000e;
-        public static final int imgdesc=0x7f0a0010;
+        public static final int drawer_close=0x7f0a0013;
+        public static final int drawer_open=0x7f0a0012;
+        public static final int hello_world=0x7f0a000f;
+        public static final int imgdesc=0x7f0a0011;
+        public static final int main_name=0x7f0a000e;
     }
     public static final class style {
         /** 

@@ -3,11 +3,10 @@ package com.sendmedia.opiummks;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
-import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -16,11 +15,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
 public class MainActivity extends ActionBarActivity  {
  
 	//deklarasi title, icon dan url menggunakan string array
 	String[] menutitles;
-	TypedArray menuIcons;
+	//TypedArray menuIcons;
 	String[] pageUrl;
 	
 	
@@ -28,7 +28,7 @@ public class MainActivity extends ActionBarActivity  {
     private ActionBarDrawerToggle mDrawerToggle;
     private ListView sliding_listview;
     
-    private CharSequence mDrawerTitle;
+
 	private CharSequence mTitle;
 	
 	private List<RowItem> rowItems;
@@ -40,12 +40,12 @@ public class MainActivity extends ActionBarActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
  
-        mTitle = "OPIUM MAKASSAR";
-        mTitle = mDrawerTitle = getTitle();
+        mTitle = getTitle();
+        
         
         //menampung string array ke variable
         menutitles = getResources().getStringArray(R.array.titles);
-		menuIcons = getResources().obtainTypedArray(R.array.icons);
+		//menuIcons = getResources().obtainTypedArray(R.array.icons);
 		pageUrl = getResources().getStringArray(R.array.pageurl);
         
         //tampilan drawer
@@ -56,12 +56,11 @@ public class MainActivity extends ActionBarActivity  {
         rowItems = new ArrayList<RowItem>();
         //add menu menggunakan list view custom adapter
 		for (int i = 0; i < menutitles.length; i++) {
-			RowItem items = new RowItem(menutitles[i], menuIcons.getResourceId(
-					i, -1), pageUrl[i]);
+			RowItem items = new RowItem(menutitles[i], pageUrl[i]);
 			rowItems.add(items);
 		}
 		
-		menuIcons.recycle();
+		//menuIcons.recycle();
 		
 		adapter = new CustomAdapter(getApplicationContext(), rowItems);
 
@@ -78,29 +77,60 @@ public class MainActivity extends ActionBarActivity  {
         
         
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-				R.drawable.ic_drawer, R.string.app_name,
-				R.string.app_name) {
+				R.drawable.ic_drawer, R.string.main_name,
+				R.string.main_name) {
+        	
 			public void onDrawerClosed(View view) {
-				getSupportActionBar().setTitle(mTitle);
-				// calling onPrepareOptionsMenu() to show action bar icons
-				supportInvalidateOptionsMenu();
+				(new Handler()).postDelayed(new Runnable() {
+		            @Override
+		            public void run() {
+					String mTitleFix = (String) mTitle;
+					String anu = mTitleFix.replaceAll("\t","");
+					getSupportActionBar().setTitle(anu);
+					// calling onPrepareOptionsMenu() to show action bar icons
+					supportInvalidateOptionsMenu();
+		            }
+		        }, 200);
 			}
 
 			public void onDrawerOpened(View drawerView) {
-				getSupportActionBar().setTitle(mDrawerTitle);
-				// calling onPrepareOptionsMenu() to hide action bar icons
-				supportInvalidateOptionsMenu();
+				(new Handler()).postDelayed(new Runnable() {
+		            @Override
+		            public void run() {
+		            	String mTitleFix = (String) mTitle;
+						String anu = mTitleFix.replaceAll("\t","");
+		                getSupportActionBar().setTitle(anu);
+						// calling onPrepareOptionsMenu() to hide action bar icons
+						supportInvalidateOptionsMenu();
+		               // updateViews();
+		            }
+		        }, 200);
+				
 			}
 		};
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
 
 		if (savedInstanceState == null) {
 			// on first time display view for first nav item
-			updateDisplay(0);
+			//updateDisplay(0);
+			
+			//initialisasi web view fragment
+			android.support.v4.app.Fragment fragment1 = new FirstLoadPage();
+			
+			//menampilkan web view fragment ke activity_main.xml
+			android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+			fragmentManager.beginTransaction()
+					.replace(R.id.content_frame, fragment1).commit();
+			
+			//set title action bar dari method set title
+			setTitle(R.string.main_name);
+			
 
 		}
  
     }
+    
+
     
     class SlideitemListener implements ListView.OnItemClickListener {
 		@Override
@@ -132,6 +162,7 @@ public class MainActivity extends ActionBarActivity  {
 				.replace(R.id.content_frame, fragment).commit();
 
 		//set title action bar dari method set title
+
 		setTitle(menutitles[position]);
 		
 		//close sliding menu setelah link list view di klik

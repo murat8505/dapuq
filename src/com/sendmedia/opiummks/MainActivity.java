@@ -5,11 +5,14 @@ import java.util.List;
 
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +25,8 @@ public class MainActivity extends ActionBarActivity  {
 	String[] menutitles;
 	//TypedArray menuIcons;
 	String[] pageUrl;
+	
+	String FirstPage;
 	
 	
     private DrawerLayout mDrawerLayout;
@@ -67,12 +72,15 @@ public class MainActivity extends ActionBarActivity  {
 		sliding_listview.setAdapter(adapter);
 
 		sliding_listview.setOnItemClickListener(new SlideitemListener());
+		sliding_listview.setSelector(R.drawable.list_view_selector);
 		
 		// Enabling Home button
         getSupportActionBar().setHomeButtonEnabled(true);
 
         // Enabling Up navigation
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#cc0000")));
+        
         
         
         
@@ -85,8 +93,10 @@ public class MainActivity extends ActionBarActivity  {
 		            @Override
 		            public void run() {
 					String mTitleFix = (String) mTitle;
-					String anu = mTitleFix.replaceAll("\t","");
-					getSupportActionBar().setTitle(anu);
+					String judul = mTitleFix.replaceAll("\t","");
+					//getSupportActionBar().setTitle(judul);
+					
+					getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#FFFFFF\">" + judul + "</font>")));
 					// calling onPrepareOptionsMenu() to show action bar icons
 					supportInvalidateOptionsMenu();
 		            }
@@ -98,8 +108,9 @@ public class MainActivity extends ActionBarActivity  {
 		            @Override
 		            public void run() {
 		            	String mTitleFix = (String) mTitle;
-						String anu = mTitleFix.replaceAll("\t","");
-		                getSupportActionBar().setTitle(anu);
+						String judul = mTitleFix.replaceAll("\t","");
+		                //getSupportActionBar().setTitle(judul);
+		                getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#FFFFFF\">" + judul + "</font>")));
 						// calling onPrepareOptionsMenu() to hide action bar icons
 						supportInvalidateOptionsMenu();
 		               // updateViews();
@@ -122,7 +133,7 @@ public class MainActivity extends ActionBarActivity  {
 			fragmentManager.beginTransaction()
 					.replace(R.id.content_frame, fragment1).commit();
 			
-			//set title action bar dari method set title
+			
 			setTitle(R.string.main_name);
 			
 
@@ -137,6 +148,9 @@ public class MainActivity extends ActionBarActivity  {
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
 			updateDisplay(position);
+			//grep selected menu from custom adapter
+			((CustomAdapter) sliding_listview.getAdapter()).selectItem(position);
+			((ListView) parent).invalidateViews();
 		}
 
 	}
@@ -175,7 +189,7 @@ public class MainActivity extends ActionBarActivity  {
 		
 		//mengirim value string mtitle ke update display
 		mTitle = title;
-		getSupportActionBar().setTitle(mTitle);
+		getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#FFFFFF\">" + mTitle + "</font>")));
 	}
 
     @Override

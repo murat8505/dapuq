@@ -4,17 +4,21 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class CustomAdapter extends BaseAdapter {
 
 	Context context;
 	List<RowItem> rowItem;
+	
+	private int selectedItemPosition = -1;
 
 	CustomAdapter(Context context, List<RowItem> rowItem) {
 		this.context = context;
@@ -25,6 +29,12 @@ public class CustomAdapter extends BaseAdapter {
 		ImageView icon;
 		TextView title;
 	}
+	
+	
+	//get selected position
+	public void selectItem(int position) {
+	    selectedItemPosition = position;
+	  }
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -46,6 +56,15 @@ public class CustomAdapter extends BaseAdapter {
 			convertView.setTag(holder);
 
 		}
+		//get selected position
+		if (position == selectedItemPosition){
+			
+			holder.title.setBackgroundResource(R.drawable.bg_list_selected);
+			holder.title.setTypeface(null,Typeface.BOLD);
+		} else {
+			holder.title.setBackgroundResource(R.drawable.bg_list_normal);
+		}
+		
 		return convertView;
 
 	}

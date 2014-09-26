@@ -13,6 +13,7 @@ import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.text.Html;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -131,23 +132,30 @@ public class MainActivity extends ActionBarActivity  {
 			//menampilkan web view fragment ke activity_main.xml
 			android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
 			fragmentManager.beginTransaction()
-					.replace(R.id.content_frame, fragment1).commit();
-			
-			
+					.replace(R.id.content_frame, fragment1).commit();			
 			setTitle(R.string.main_name);
-			
 
 		}
- 
     }
     
 
+    @Override
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+    	//cek jika drawer layout aktif dan tombol back di tekan maka drawer di tutup
+        if(mDrawerLayout.isDrawerOpen(Gravity.LEFT)){
+            mDrawerLayout.closeDrawer(Gravity.LEFT);
+        }else{
+            super.onBackPressed();
+        }
+    }
     
     class SlideitemListener implements ListView.OnItemClickListener {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
 			updateDisplay(position);
+			
 			//grep selected menu from custom adapter
 			((CustomAdapter) sliding_listview.getAdapter()).selectItem(position);
 			((ListView) parent).invalidateViews();

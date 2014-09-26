@@ -2,6 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="5dip"
+    android:paddingBottom="5dip"
     android:layout_marginBottom="10dip">
 
    <!-- Disable icon 
@@ -22,8 +24,8 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:paddingTop="10dip"
         android:paddingBottom="10dip"
         android:gravity="center_vertical"

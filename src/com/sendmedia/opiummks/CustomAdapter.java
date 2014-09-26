@@ -58,9 +58,9 @@ public class CustomAdapter extends BaseAdapter {
 		}
 		//get selected position
 		if (position == selectedItemPosition){
-			
 			holder.title.setBackgroundResource(R.drawable.bg_list_selected);
 			holder.title.setTypeface(null,Typeface.BOLD);
+			holder.title.setPadding(15, 18, 0, 18);
 		} else {
 			holder.title.setBackgroundResource(R.drawable.bg_list_normal);
 		}

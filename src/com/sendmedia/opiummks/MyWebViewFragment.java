@@ -2,21 +2,24 @@ package com.sendmedia.opiummks;
 
 
 import android.support.v4.app.Fragment;
-import android.app.ProgressDialog;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
+
+import com.handmark.pulltorefresh.library.PullToRefreshWebView;
 
 public class MyWebViewFragment extends Fragment {
 
 	public MyWebViewFragment(){}
 	
-	ProgressDialog mProgress;
+	ProgressBar progress;
+	PullToRefreshWebView mPullRefreshWebView;
 	WebView webview;
 
 	@Override
@@ -30,12 +33,17 @@ public class MyWebViewFragment extends Fragment {
 
 		String url = bundle.getString("url");
 
-		webview = (WebView) rootView.findViewById(R.id.webview1);
+		//pull down to refresh using Android-PullToRefresh Library
+		mPullRefreshWebView = (PullToRefreshWebView) rootView.findViewById(R.id.pull_refresh_webview);
+		
+		webview = mPullRefreshWebView.getRefreshableView();
 		webview.getSettings().setJavaScriptEnabled(true);
 		webview.setWebViewClient(new MyWebViewClient());
 
-		mProgress = ProgressDialog.show(getActivity(), "Loading",
-				"Please wait for a moment...");
+		//show progress bar when web loading
+		progress = (ProgressBar) rootView.findViewById(R.id.progressBar);
+		progress.setVisibility(View.GONE);
+		
 		webview.loadUrl(url);
 
 		
@@ -69,10 +77,17 @@ public class MyWebViewFragment extends Fragment {
 	    
 		@Override
 		public void onPageFinished(WebView view, String url) {
-			super.onPageFinished(view, url);
-			if (mProgress.isShowing()) {
-				mProgress.dismiss();
-			}
+			progress.setVisibility(View.GONE);
+			MyWebViewFragment.this.progress.setProgress(100);
+		    super.onPageFinished(view, url);
+			
+		}
+		
+		 @Override
+		public void onPageStarted(WebView view, String url, Bitmap favicon) {
+			progress.setVisibility(View.VISIBLE);
+			MyWebViewFragment.this.progress.setProgress(0);
+			super.onPageStarted(view, url, favicon);
 		}
 	}
 }

@@ -23,9 +23,9 @@
         android:paddingTop="10dip"
         android:paddingBottom="10dip"
         android:layout_gravity="start"
-       android:background="#d91422"
-       android:divider="@android:color/transparent"
-       android:dividerHeight="0dp"
+        android:background="#cc0000"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
         android:cacheColorHint="@null"
         android:choiceMode="singleChoice"/>
  		

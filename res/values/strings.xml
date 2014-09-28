@@ -3,7 +3,7 @@
 
     <string name="app_name">Opium Makassar</string>
     <string name="main_name">OPIUM MAKASSAR</string>
-    <string name="action_settings">About Apps</string>
+    <string name="about">About Apps</string>
     <string name="imgdesc">imgdesc</string>
     <string name="drawer_open">Buka</string>
     <string name="drawer_close">Tutup</string>
@@ -35,27 +35,27 @@
     </string-array>
     <!-- Page Url -->
     <string-array name="pageurl">
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
-        <item>http://opium-makassar.com/progress/entertainment.php</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://www.opium-makassar.com/progress/mobile</item>
     </string-array>
     <!-- Icons don't using for now-->
  <!--     <array name="icons">

@@ -15,10 +15,12 @@ public final class R {
         public static final int abc_slide_in_top=0x7f040003;
         public static final int abc_slide_out_bottom=0x7f040004;
         public static final int abc_slide_out_top=0x7f040005;
-        public static final int slide_in_from_bottom=0x7f040006;
-        public static final int slide_in_from_top=0x7f040007;
-        public static final int slide_out_to_bottom=0x7f040008;
-        public static final int slide_out_to_top=0x7f040009;
+        public static final int mainfadein=0x7f040006;
+        public static final int slide_in_from_bottom=0x7f040007;
+        public static final int slide_in_from_top=0x7f040008;
+        public static final int slide_out_to_bottom=0x7f040009;
+        public static final int slide_out_to_top=0x7f04000a;
+        public static final int splashfadeout=0x7f04000b;
     }
     public static final class array {
         /**  Page Url 
@@ -1235,14 +1237,17 @@ containing a value of this type.
         public static final int default_ptr_flip=0x7f020059;
         public static final int default_ptr_rotate=0x7f02005a;
         public static final int garis=0x7f02005b;
-        public static final int ic_drawer=0x7f02005c;
-        public static final int ic_launcher=0x7f02005d;
-        public static final int indicator_arrow=0x7f02005e;
-        public static final int indicator_bg_bottom=0x7f02005f;
-        public static final int indicator_bg_top=0x7f020060;
-        public static final int list_view_selector=0x7f020061;
+        public static final int ic_about=0x7f02005c;
+        public static final int ic_drawer=0x7f02005d;
+        public static final int ic_launcher=0x7f02005e;
+        public static final int indicator_arrow=0x7f02005f;
+        public static final int indicator_bg_bottom=0x7f020060;
+        public static final int indicator_bg_top=0x7f020061;
+        public static final int list_view_selector=0x7f020062;
+        public static final int splash_screen=0x7f020063;
     }
     public static final class id {
+        public static final int about=0x7f050052;
         public static final int action_bar=0x7f050028;
         public static final int action_bar_activity_content=0x7f050021;
         public static final int action_bar_container=0x7f050027;
@@ -1254,7 +1259,6 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050022;
         public static final int action_menu_presenter=0x7f050023;
         public static final int action_mode_close_button=0x7f050030;
-        public static final int action_settings=0x7f050052;
         public static final int activity_chooser_view_content=0x7f050031;
         public static final int always=0x7f050017;
         public static final int beginning=0x7f05001d;
@@ -1381,8 +1385,9 @@ containing a value of this type.
         public static final int list_item=0x7f030019;
         public static final int pull_to_refresh_header_horizontal=0x7f03001a;
         public static final int pull_to_refresh_header_vertical=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
-        public static final int web_fragment=0x7f03001d;
+        public static final int splash_screen=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+        public static final int web_fragment=0x7f03001e;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
@@ -1428,7 +1433,7 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f070011;
-        public static final int action_settings=0x7f070015;
+        public static final int about=0x7f070015;
         public static final int app_name=0x7f070013;
         public static final int drawer_close=0x7f070018;
         public static final int drawer_open=0x7f070017;

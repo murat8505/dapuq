@@ -4,9 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -214,20 +218,44 @@ public class MainActivity extends ActionBarActivity  {
 		}
 		// Handle action bar actions click
 		switch (item.getItemId()) {
-		case R.id.action_settings:
+		case R.id.about:
+			about();
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
     }
+    
+    //showing about on pop up notification
+    
+	public void about (){
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setCancelable(false)
+		       .setTitle("About")
+		       .setMessage(
+		    		"Opium Makassar Mobile version 1.0\n" +
+		       		"Development by : Send Media Indonesia\n\n\n\n\n\n\n" +
+		    		"+--------------------------------+\n" +
+		       		"   Contact Developer:\n" +
+		       		"   ukie.tux@gmail.com\n" +
+		       		"+--------------------------------+")
+		       .setIcon(R.drawable.ic_about)
+		       .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		                dialog.cancel();
+		           }
+		       });
+		AlertDialog alert = builder.create();
+		alert.show();
+	}
 
-    /** Called whenever we call supportInvalidateOptionsMenu(); */
+	/** Called whenever we call supportInvalidateOptionsMenu(); */
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If the drawer is open, hide action items related to the content view
         boolean drawerOpen = mDrawerLayout.isDrawerOpen(sliding_listview);
 
-        menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+        menu.findItem(R.id.about).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }
 

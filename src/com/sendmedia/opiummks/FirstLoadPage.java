@@ -23,7 +23,7 @@ public class FirstLoadPage extends Fragment {
 	PullToRefreshWebView mPullRefreshWebView;
 	WebView myWebView;
 	
-	final static String home = "http://opium-makassar.com/progress/";
+	final static String home = "http://www.opium-makassar.com/progress/mobile";
 	String myUrl;
 	
 	@Override

@@ -5,6 +5,7 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,9 +59,17 @@ public class CustomAdapter extends BaseAdapter {
 		}
 		//get selected position
 		if (position == selectedItemPosition){
+			//grep row item text to set gravity center
+			RowItem row_pos = rowItem.get(position);
+			String mTitleFix = row_pos.getTitle();
+			String judul = mTitleFix.replaceAll("\t","");
+			holder.title.setText(judul);
+			
+			
 			holder.title.setBackgroundResource(R.drawable.bg_list_selected);
 			holder.title.setTypeface(null,Typeface.BOLD);
-			holder.title.setPadding(15, 18, 0, 18);
+			holder.title.setGravity(Gravity.CENTER);
+			holder.title.setPadding(0, 0, 0, 0);
 		} else {
 			holder.title.setBackgroundResource(R.drawable.bg_list_normal);
 		}

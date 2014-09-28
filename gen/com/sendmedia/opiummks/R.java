@@ -1234,16 +1234,13 @@ containing a value of this type.
         public static final int bg_list_selected=0x7f020058;
         public static final int default_ptr_flip=0x7f020059;
         public static final int default_ptr_rotate=0x7f02005a;
-        public static final int facebook=0x7f02005b;
-        public static final int garis=0x7f02005c;
-        public static final int ic_drawer=0x7f02005d;
-        public static final int ic_launcher=0x7f02005e;
-        public static final int ic_navigation_drawer=0x7f02005f;
-        public static final int indicator_arrow=0x7f020060;
-        public static final int indicator_bg_bottom=0x7f020061;
-        public static final int indicator_bg_top=0x7f020062;
-        public static final int list_view_selector=0x7f020063;
-        public static final int tutorrialsbuzz=0x7f020064;
+        public static final int garis=0x7f02005b;
+        public static final int ic_drawer=0x7f02005c;
+        public static final int ic_launcher=0x7f02005d;
+        public static final int indicator_arrow=0x7f02005e;
+        public static final int indicator_bg_bottom=0x7f02005f;
+        public static final int indicator_bg_top=0x7f020060;
+        public static final int list_view_selector=0x7f020061;
     }
     public static final class id {
         public static final int action_bar=0x7f050028;

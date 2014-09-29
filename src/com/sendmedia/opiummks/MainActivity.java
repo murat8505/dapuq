@@ -237,7 +237,7 @@ public class MainActivity extends ActionBarActivity  {
 		       		"Development by : Send Media Indonesia\n\n\n\n\n\n\n" +
 		    		"+--------------------------------+\n" +
 		       		"   Contact Developer:\n" +
-		       		"   ukie.tux@gmail.com\n" +
+		       		"   sendmedia99@gmail.com\n" +
 		       		"+--------------------------------+")
 		       .setIcon(R.drawable.ic_about)
 		       .setPositiveButton("OK", new DialogInterface.OnClickListener() {

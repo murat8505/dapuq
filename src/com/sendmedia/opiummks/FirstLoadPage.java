@@ -2,7 +2,6 @@ package com.sendmedia.opiummks;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView;
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;

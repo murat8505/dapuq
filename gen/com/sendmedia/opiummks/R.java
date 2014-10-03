@@ -1247,7 +1247,7 @@ containing a value of this type.
         public static final int splash_screen=0x7f020063;
     }
     public static final class id {
-        public static final int about=0x7f050052;
+        public static final int about=0x7f050056;
         public static final int action_bar=0x7f050028;
         public static final int action_bar_activity_content=0x7f050015;
         public static final int action_bar_container=0x7f050027;
@@ -1277,6 +1277,7 @@ containing a value of this type.
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050032;
         public static final int expanded_menu=0x7f050038;
+        public static final int facebook=0x7f050052;
         public static final int fl_inner=0x7f05004b;
         public static final int flip=0x7f050022;
         public static final int gridview=0x7f050023;
@@ -1285,6 +1286,8 @@ containing a value of this type.
         public static final int icon=0x7f050036;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050033;
+        public static final int insta=0x7f050053;
+        public static final int issuu=0x7f050054;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050035;
         public static final int manualOnly=0x7f05001e;
@@ -1326,6 +1329,7 @@ containing a value of this type.
         public static final int tabMode=0x7f050002;
         public static final int title=0x7f050037;
         public static final int top_action_bar=0x7f05002c;
+        public static final int twitter=0x7f050055;
         public static final int up=0x7f05002d;
         public static final int useLogo=0x7f050003;
         public static final int webview=0x7f050024;
@@ -1437,8 +1441,17 @@ containing a value of this type.
         public static final int app_name=0x7f0a0013;
         public static final int drawer_close=0x7f0a0018;
         public static final int drawer_open=0x7f0a0017;
+        /**  Sosmed 
+         */
+        public static final int facebook=0x7f0a0019;
         public static final int imgdesc=0x7f0a0016;
+        public static final int instagram=0x7f0a001c;
+        public static final int issuu=0x7f0a001b;
         public static final int main_name=0x7f0a0014;
+        public static final int opium_fb=0x7f0a001d;
+        public static final int opium_insta=0x7f0a0020;
+        public static final int opium_issuu=0x7f0a001f;
+        public static final int opium_twit=0x7f0a001e;
         /**  Just use standard Pull Down String when pulling up. These can be set for languages which require it 
  Just use standard Pull Down String when pulling up. These can be set for languages which require it 
          */
@@ -1448,6 +1461,11 @@ containing a value of this type.
         public static final int pull_to_refresh_pull_label=0x7f0a000d;
         public static final int pull_to_refresh_refreshing_label=0x7f0a000f;
         public static final int pull_to_refresh_release_label=0x7f0a000e;
+        public static final int twitter=0x7f0a001a;
+        public static final int url_facebook=0x7f0a0021;
+        public static final int url_instagram=0x7f0a0022;
+        public static final int url_issuu=0x7f0a0023;
+        public static final int url_twitter=0x7f0a0024;
     }
     public static final class style {
         /** 

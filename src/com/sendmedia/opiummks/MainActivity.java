@@ -6,11 +6,9 @@ import java.util.List;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -38,6 +36,7 @@ public class MainActivity extends ActionBarActivity  {
     private ActionBarDrawerToggle mDrawerToggle;
     private ListView sliding_listview;
     
+    
 
 	private CharSequence mTitle;
 	
@@ -58,6 +57,7 @@ public class MainActivity extends ActionBarActivity  {
 		//menuIcons = getResources().obtainTypedArray(R.array.icons);
 		pageUrl = getResources().getStringArray(R.array.pageurl);
         
+		
         //tampilan drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         sliding_listview = (ListView) findViewById(R.id.drawer_list);
@@ -71,6 +71,8 @@ public class MainActivity extends ActionBarActivity  {
 		}
 		
 		//menuIcons.recycle();
+		
+		
 		
 		adapter = new CustomAdapter(getApplicationContext(), rowItems);
 
@@ -218,12 +220,79 @@ public class MainActivity extends ActionBarActivity  {
 		}
 		// Handle action bar actions click
 		switch (item.getItemId()) {
+		
+		//facebook
+		case R.id.facebook:
+				Facebook();
+			return true;
+		
+		//instagram
+			case R.id.insta:
+				Instagram();
+			return true;
+		
+		//issu
+		case R.id.issuu:
+				Issuu();
+			return true;
+		
+		//twitter
+		case R.id.twitter:
+				Twitter();
+			return true;
+			
 		case R.id.about:
 			about();
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+    }
+    
+    public void Facebook() {
+
+		//initialisasi web view fragment
+		android.support.v4.app.Fragment facebook= new PageFacebook();
+		
+		//menampilkan web view fragment ke activity_main.xml
+		android.support.v4.app.FragmentManager facebook_manager = getSupportFragmentManager();
+		facebook_manager.beginTransaction()
+				.replace(R.id.content_frame, facebook).commit();			
+		setTitle(R.string.opium_fb);
+    }
+    
+    public void Instagram() {
+
+		//initialisasi web view fragment
+		android.support.v4.app.Fragment instagram = new PageInstagram();
+	
+		//menampilkan web view fragment ke activity_main.xml
+		android.support.v4.app.FragmentManager instagram_manager = getSupportFragmentManager();
+		instagram_manager.beginTransaction()
+		.replace(R.id.content_frame, instagram).commit();			
+		setTitle(R.string.opium_insta);
+    }
+    
+    public void Issuu() {
+    	//initialisasi web view fragment
+		android.support.v4.app.Fragment issuu = new PageIssuu();
+		
+		//menampilkan web view fragment ke activity_main.xml
+		android.support.v4.app.FragmentManager issuu_manager = getSupportFragmentManager();
+		issuu_manager.beginTransaction()
+				.replace(R.id.content_frame, issuu).commit();			
+		setTitle(R.string.opium_issuu);
+    }
+    
+    public void Twitter() {
+    	//initialisasi web view fragment
+		android.support.v4.app.Fragment twitter = new PageTwitter();
+		
+		//menampilkan web view fragment ke activity_main.xml
+		android.support.v4.app.FragmentManager twitter_manager = getSupportFragmentManager();
+		twitter_manager.beginTransaction()
+				.replace(R.id.content_frame, twitter).commit();			
+		setTitle(R.string.opium_twit);
     }
     
     //showing about on pop up notification
@@ -256,6 +325,10 @@ public class MainActivity extends ActionBarActivity  {
         boolean drawerOpen = mDrawerLayout.isDrawerOpen(sliding_listview);
 
         menu.findItem(R.id.about).setVisible(!drawerOpen);
+        menu.findItem(R.id.facebook).setVisible(!drawerOpen);
+        menu.findItem(R.id.insta).setVisible(!drawerOpen);
+        menu.findItem(R.id.issuu).setVisible(!drawerOpen);
+        menu.findItem(R.id.twitter).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }
 

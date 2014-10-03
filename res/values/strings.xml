@@ -57,6 +57,25 @@
         <item>http://www.opium-makassar.com/progress/mobile</item>
         <item>http://www.opium-makassar.com/progress/mobile</item>
     </string-array>
+    
+    <!-- Sosmed -->
+  
+        <string name="facebook">Facebook</string>
+        <string name="twitter">Twitter</string>
+        <string name="issuu">Issuu</string>
+        <string name="instagram">Instagram</string>
+        
+        <string name="opium_fb">Opium on Facebook</string>
+        <string name="opium_twit">Opium on Twitter</string>
+        <string name="opium_issuu">Opium on Issuu</string>
+        <string name="opium_insta">Opium on Instagram</string>
+        
+        <string name="url_facebook">https://m.facebook.com/opiummagazine.makassar</string>
+        <string name="url_instagram">http://instagram.com/opiumagazine</string>
+        <string name="url_issuu">http://issuu.com/opiumagazine</string>
+        <string name="url_twitter">https://mobile.twitter.com/opiumagazine</string>
+        
+        
     <!-- Icons don't using for now-->
  <!--     <array name="icons">
         <item>@drawable/tutorrialsbuzz</item>

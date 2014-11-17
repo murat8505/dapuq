@@ -2,6 +2,7 @@ package com.sendmedia.opiummks;
 
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+@SuppressLint("ResourceAsColor")
 public class CustomAdapter extends BaseAdapter {
 
 	Context context;
@@ -41,16 +43,20 @@ public class CustomAdapter extends BaseAdapter {
 		convertView = null;
 		LayoutInflater mInflater = (LayoutInflater) context
 				.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+		Typeface myFont = Typeface.createFromAsset(context.getAssets(),
+				"fonts/TheSaBk.ttf");
 		if (convertView == null) {
 			convertView = mInflater.inflate(R.layout.list_item, null);
 			holder = new ViewHolder();
 			//holder.icon = (ImageView) convertView.findViewById(R.id.icon);
 			holder.title = (TextView) convertView.findViewById(R.id.title);
-
+			
 			RowItem row_pos = rowItem.get(position);
+			
 			// setting the image resource and title
 			//holder.icon.setImageResource(row_pos.getIcon());
 			holder.title.setText(row_pos.getTitle());
+			holder.title.setTypeface(myFont);
 			convertView.setTag(holder);
 
 		}
@@ -64,9 +70,9 @@ public class CustomAdapter extends BaseAdapter {
 			
 			
 			holder.title.setBackgroundResource(R.drawable.bg_list_selected);
-			holder.title.setTypeface(null,Typeface.BOLD);
+			holder.title.setTypeface(myFont,Typeface.BOLD);
+			holder.title.setTextColor(R.color.black);
 			holder.title.setGravity(Gravity.CENTER);
-			holder.title.setPadding(0, 0, 0, 0);
 		} else {
 			holder.title.setBackgroundResource(R.drawable.bg_list_normal);
 		}

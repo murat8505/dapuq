@@ -1,5 +1,7 @@
-package com.sendmedia.opiummks;
+package com.sendmedia.opiummks.fragment;
 
+
+import java.io.InputStream;
 
 import android.support.v4.app.Fragment;
 import android.graphics.Bitmap;
@@ -13,10 +15,11 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
 import com.handmark.pulltorefresh.library.PullToRefreshWebView;
+import com.sendmedia.opiummks.R;
 
-public class MyWebViewFragment extends Fragment {
+public class PageMain extends Fragment {
 
-	public MyWebViewFragment(){}
+	public PageMain(){}
 	
 	ProgressBar progress;
 	PullToRefreshWebView mPullRefreshWebView;
@@ -45,8 +48,6 @@ public class MyWebViewFragment extends Fragment {
 		progress.setVisibility(View.GONE);
 		
 		webview.loadUrl(url);
-
-		
 		webview.requestFocus(View.FOCUS_DOWN);
 		
 		//showing up keyboard on focus
@@ -78,15 +79,13 @@ public class MyWebViewFragment extends Fragment {
 		@Override
 		public void onPageFinished(WebView view, String url) {
 			progress.setVisibility(View.GONE);
-			MyWebViewFragment.this.progress.setProgress(100);
+			PageMain.this.progress.setProgress(100);
 		    super.onPageFinished(view, url);
-			
 		}
-		
 		 @Override
 		public void onPageStarted(WebView view, String url, Bitmap favicon) {
 			progress.setVisibility(View.VISIBLE);
-			MyWebViewFragment.this.progress.setProgress(0);
+			PageMain.this.progress.setProgress(0);
 			super.onPageStarted(view, url, favicon);
 		}
 	}

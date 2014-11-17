@@ -1,5 +1,9 @@
-package com.sendmedia.opiummks;
+package com.sendmedia.opiummks.fragment;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView;
+import com.sendmedia.opiummks.R;
+import com.sendmedia.opiummks.R.id;
+import com.sendmedia.opiummks.R.layout;
+import com.sendmedia.opiummks.R.string;
 
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
@@ -14,15 +18,15 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
 @SuppressLint("NewApi")
-public class PageFacebook extends Fragment {
+public class PageIssuu extends Fragment {
 	
-	public PageFacebook(){}
+	public PageIssuu(){}
 	
 	ProgressBar progress;
 	PullToRefreshWebView mPullRefreshWebView;
 	WebView myWebView;
 	
-	String facebook;
+	String Issuu;
 	String myUrl;
 	
 	@Override
@@ -32,8 +36,7 @@ public class PageFacebook extends Fragment {
 		View rootView = inflater.inflate(R.layout.web_fragment,
 	            container, false);
 		
-		facebook = getResources().getString(R.string.url_facebook);
-		
+		Issuu = getResources().getString(R.string.url_issuu);
         mPullRefreshWebView = (PullToRefreshWebView) rootView.findViewById(R.id.pull_refresh_webview);
 		
 		myWebView = mPullRefreshWebView.getRefreshableView();
@@ -42,7 +45,7 @@ public class PageFacebook extends Fragment {
 	    
 
 	    if (myUrl == null) {
-	        myUrl = facebook;
+	        myUrl = Issuu;
 	    }
 	    
 		progress = (ProgressBar) rootView.findViewById(R.id.progressBar);
@@ -83,7 +86,7 @@ public class PageFacebook extends Fragment {
 		@Override
 		public void onPageFinished(WebView view, String url) {
 			progress.setVisibility(View.GONE);
-			PageFacebook.this.progress.setProgress(100);
+			PageIssuu.this.progress.setProgress(100);
 		    super.onPageFinished(view, url);
 			
 		}
@@ -91,7 +94,7 @@ public class PageFacebook extends Fragment {
 		 @Override
 		public void onPageStarted(WebView view, String url, Bitmap favicon) {
 			progress.setVisibility(View.VISIBLE);
-			PageFacebook.this.progress.setProgress(0);
+			PageIssuu.this.progress.setProgress(0);
 			super.onPageStarted(view, url, favicon);
 		}
 	}

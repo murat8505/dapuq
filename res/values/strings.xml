@@ -3,7 +3,7 @@
 
     <string name="app_name">Opium Makassar</string>
     <string name="main_name">OPIUM MAKASSAR</string>
-    <string name="about">About Apps</string>
+    <string name="about">About</string>
     <string name="imgdesc">imgdesc</string>
     <string name="drawer_open">Buka</string>
     <string name="drawer_close">Tutup</string>
@@ -35,53 +35,40 @@
     </string-array>
     <!-- Page Url -->
     <string-array name="pageurl">
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
-        <item>http://www.opium-makassar.com/progress/mobile</item>
+        <item>http://mobile.opium-makassar.com/entertainment.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/music.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/movie.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/sport.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/art.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/photo.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/design.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/video.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/lifestyle.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/fashion.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/hangout.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/place.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/gadget.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/opiumbabes.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/schoolism.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/school.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/news.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/profil.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/more.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/about.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/contact.php?action=1</item>
     </string-array>
     
     <!-- Sosmed -->
-  
+  		<string name="my_link"><a ref="http://www.sendmedia.co.id/">sendmedia.co.id</a></string>
         <string name="facebook">Facebook</string>
         <string name="twitter">Twitter</string>
         <string name="issuu">Issuu</string>
         <string name="instagram">Instagram</string>
         
-        <string name="opium_fb">Opium on Facebook</string>
-        <string name="opium_twit">Opium on Twitter</string>
-        <string name="opium_issuu">Opium on Issuu</string>
-        <string name="opium_insta">Opium on Instagram</string>
         
         <string name="url_facebook">https://m.facebook.com/opiummagazine.makassar</string>
         <string name="url_instagram">http://instagram.com/opiumagazine</string>
         <string name="url_issuu">http://issuu.com/opiumagazine</string>
         <string name="url_twitter">https://mobile.twitter.com/opiumagazine</string>
         
-        
-    <!-- Icons don't using for now-->
- <!--     <array name="icons">
-        <item>@drawable/tutorrialsbuzz</item>
-        <item>@drawable/facebook</item>
-        <item>@drawable/facebook</item>
-    </array>
- -->
-
 </resources>

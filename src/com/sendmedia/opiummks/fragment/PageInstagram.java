@@ -1,5 +1,9 @@
-package com.sendmedia.opiummks;
+package com.sendmedia.opiummks.fragment;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView;
+import com.sendmedia.opiummks.R;
+import com.sendmedia.opiummks.R.id;
+import com.sendmedia.opiummks.R.layout;
+import com.sendmedia.opiummks.R.string;
 
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
@@ -14,15 +18,15 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
 @SuppressLint("NewApi")
-public class PageTwitter extends Fragment {
+public class PageInstagram extends Fragment {
 	
-	public PageTwitter(){}
+	public PageInstagram(){}
 	
 	ProgressBar progress;
 	PullToRefreshWebView mPullRefreshWebView;
 	WebView myWebView;
 	
-	String Twitter;
+	String Instagram;
 	String myUrl;
 	
 	@Override
@@ -32,7 +36,7 @@ public class PageTwitter extends Fragment {
 		View rootView = inflater.inflate(R.layout.web_fragment,
 	            container, false);
 		
-		Twitter = getResources().getString(R.string.url_twitter);
+		Instagram = getResources().getString(R.string.url_instagram);
         mPullRefreshWebView = (PullToRefreshWebView) rootView.findViewById(R.id.pull_refresh_webview);
 		
 		myWebView = mPullRefreshWebView.getRefreshableView();
@@ -41,7 +45,7 @@ public class PageTwitter extends Fragment {
 	    
 
 	    if (myUrl == null) {
-	        myUrl = Twitter;
+	        myUrl = Instagram;
 	    }
 	    
 		progress = (ProgressBar) rootView.findViewById(R.id.progressBar);
@@ -82,7 +86,7 @@ public class PageTwitter extends Fragment {
 		@Override
 		public void onPageFinished(WebView view, String url) {
 			progress.setVisibility(View.GONE);
-			PageTwitter.this.progress.setProgress(100);
+			PageInstagram.this.progress.setProgress(100);
 		    super.onPageFinished(view, url);
 			
 		}
@@ -90,7 +94,7 @@ public class PageTwitter extends Fragment {
 		 @Override
 		public void onPageStarted(WebView view, String url, Bitmap favicon) {
 			progress.setVisibility(View.VISIBLE);
-			PageTwitter.this.progress.setProgress(0);
+			PageInstagram.this.progress.setProgress(0);
 			super.onPageStarted(view, url, favicon);
 		}
 	}

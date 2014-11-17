@@ -1,5 +1,6 @@
-package com.sendmedia.opiummks;
+package com.sendmedia.opiummks.fragment;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView;
+import com.sendmedia.opiummks.R;
 
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
@@ -14,15 +15,15 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
 @SuppressLint("NewApi")
-public class PageInstagram extends Fragment {
+public class FirstLoadPage extends Fragment {
 	
-	public PageInstagram(){}
+	public FirstLoadPage(){}
 	
 	ProgressBar progress;
 	PullToRefreshWebView mPullRefreshWebView;
 	WebView myWebView;
 	
-	String Instagram;
+	final static String home = "http://mobile.opium-makassar.com/?action=1";
 	String myUrl;
 	
 	@Override
@@ -32,7 +33,6 @@ public class PageInstagram extends Fragment {
 		View rootView = inflater.inflate(R.layout.web_fragment,
 	            container, false);
 		
-		Instagram = getResources().getString(R.string.url_instagram);
         mPullRefreshWebView = (PullToRefreshWebView) rootView.findViewById(R.id.pull_refresh_webview);
 		
 		myWebView = mPullRefreshWebView.getRefreshableView();
@@ -41,14 +41,14 @@ public class PageInstagram extends Fragment {
 	    
 
 	    if (myUrl == null) {
-	        myUrl = Instagram;
+	        myUrl = home;
 	    }
 	    
 		progress = (ProgressBar) rootView.findViewById(R.id.progressBar);
 		progress.setVisibility(View.GONE);
 		
 	    myWebView.loadUrl(myUrl);
-	    
+		
         myWebView.requestFocus(View.FOCUS_DOWN);
 		
 		//showing up keyboard on focus
@@ -82,7 +82,7 @@ public class PageInstagram extends Fragment {
 		@Override
 		public void onPageFinished(WebView view, String url) {
 			progress.setVisibility(View.GONE);
-			PageInstagram.this.progress.setProgress(100);
+			FirstLoadPage.this.progress.setProgress(100);
 		    super.onPageFinished(view, url);
 			
 		}
@@ -90,7 +90,7 @@ public class PageInstagram extends Fragment {
 		 @Override
 		public void onPageStarted(WebView view, String url, Bitmap favicon) {
 			progress.setVisibility(View.VISIBLE);
-			PageInstagram.this.progress.setProgress(0);
+			FirstLoadPage.this.progress.setProgress(0);
 			super.onPageStarted(view, url, favicon);
 		}
 	}

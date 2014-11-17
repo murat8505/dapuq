@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sendmedia.opiummks"
-    android:versionCode="1"
-    android:versionName="Beta Version" >
+    android:versionCode="2"
+    android:versionName="Version 1.0" >
     
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -19,7 +19,7 @@
         <activity
             android:name=".SplashScreen"
             android:label="@string/app_name" 
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +28,8 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

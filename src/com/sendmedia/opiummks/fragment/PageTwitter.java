@@ -1,5 +1,9 @@
-package com.sendmedia.opiummks;
+package com.sendmedia.opiummks.fragment;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView;
+import com.sendmedia.opiummks.R;
+import com.sendmedia.opiummks.R.id;
+import com.sendmedia.opiummks.R.layout;
+import com.sendmedia.opiummks.R.string;
 
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
@@ -14,15 +18,15 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
 @SuppressLint("NewApi")
-public class FirstLoadPage extends Fragment {
+public class PageTwitter extends Fragment {
 	
-	public FirstLoadPage(){}
+	public PageTwitter(){}
 	
 	ProgressBar progress;
 	PullToRefreshWebView mPullRefreshWebView;
 	WebView myWebView;
 	
-	final static String home = "http://www.opium-makassar.com/progress/mobile";
+	String Twitter;
 	String myUrl;
 	
 	@Override
@@ -32,6 +36,7 @@ public class FirstLoadPage extends Fragment {
 		View rootView = inflater.inflate(R.layout.web_fragment,
 	            container, false);
 		
+		Twitter = getResources().getString(R.string.url_twitter);
         mPullRefreshWebView = (PullToRefreshWebView) rootView.findViewById(R.id.pull_refresh_webview);
 		
 		myWebView = mPullRefreshWebView.getRefreshableView();
@@ -40,7 +45,7 @@ public class FirstLoadPage extends Fragment {
 	    
 
 	    if (myUrl == null) {
-	        myUrl = home;
+	        myUrl = Twitter;
 	    }
 	    
 		progress = (ProgressBar) rootView.findViewById(R.id.progressBar);
@@ -81,7 +86,7 @@ public class FirstLoadPage extends Fragment {
 		@Override
 		public void onPageFinished(WebView view, String url) {
 			progress.setVisibility(View.GONE);
-			FirstLoadPage.this.progress.setProgress(100);
+			PageTwitter.this.progress.setProgress(100);
 		    super.onPageFinished(view, url);
 			
 		}
@@ -89,7 +94,7 @@ public class FirstLoadPage extends Fragment {
 		 @Override
 		public void onPageStarted(WebView view, String url, Bitmap favicon) {
 			progress.setVisibility(View.VISIBLE);
-			FirstLoadPage.this.progress.setProgress(0);
+			PageTwitter.this.progress.setProgress(0);
 			super.onPageStarted(view, url, favicon);
 		}
 	}

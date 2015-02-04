@@ -18,7 +18,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Gravity;
@@ -44,6 +45,7 @@ public class MainActivity extends ActionBarActivity {
 	private DrawerLayout mDrawerLayout;
 	private ActionBarDrawerToggle mDrawerToggle;
 	private ListView sliding_listview;
+	private Toolbar toolbar;
 
 	private List<RowItem> rowItems;
 	private CustomAdapter adapter;
@@ -62,6 +64,13 @@ public class MainActivity extends ActionBarActivity {
 		// tampilan drawer
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		sliding_listview = (ListView) findViewById(R.id.drawer_list);
+		
+		//toolbar
+		toolbar = (Toolbar) findViewById(R.id.toolbar);
+	    if (toolbar != null) {
+	        toolbar.setTitle(null);
+	        setSupportActionBar(toolbar);
+	    }
 
 		rowItems = new ArrayList<RowItem>();
 		// add menu menggunakan list view custom adapter
@@ -92,14 +101,14 @@ public class MainActivity extends ActionBarActivity {
 		getSupportActionBar().setBackgroundDrawable(background);
 		getSupportActionBar().setIcon(R.color.transparent);
 
-		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-				R.drawable.ic_drawer, R.string.main_name, R.string.main_name) {
+		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout
+				, R.string.main_name, R.string.main_name) {
 
 			public void onDrawerClosed(View view) {
 				(new Handler()).postDelayed(new Runnable() {
 					@Override
 					public void run() {
-						getSupportActionBar().setTitle(null);
+						toolbar.setTitle(null);
 						// calling onPrepareOptionsMenu() to show action bar
 						// icons
 						supportInvalidateOptionsMenu();
@@ -111,7 +120,7 @@ public class MainActivity extends ActionBarActivity {
 				(new Handler()).postDelayed(new Runnable() {
 					@Override
 					public void run() {
-						getSupportActionBar().setTitle(null);
+						toolbar.setTitle(null);
 					}
 				}, 200);
 

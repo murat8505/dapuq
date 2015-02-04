@@ -21,8 +21,8 @@
         <item>\tVIDEO</item>
         <item>  LIFE STYLE</item>
         <item>\tFASHION</item>
-        <item>\tHANGOUT</item>
-        <item>\tPLACE</item>
+        <item>\tHANGOUT PLACE</item>
+        <item>\tHOW\'S LIFE</item>
         <item>\tGADGET</item>
         <item>  OPIUMBABES</item>
         <item>  SCHOOLISM</item>
@@ -46,7 +46,7 @@
         <item>http://mobile.opium-makassar.com/lifestyle.php?action=1</item>
         <item>http://mobile.opium-makassar.com/fashion.php?action=1</item>
         <item>http://mobile.opium-makassar.com/hangout.php?action=1</item>
-        <item>http://mobile.opium-makassar.com/place.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/howslife.php?action=1</item>
         <item>http://mobile.opium-makassar.com/gadget.php?action=1</item>
         <item>http://mobile.opium-makassar.com/opiumbabes.php?action=1</item>
         <item>http://mobile.opium-makassar.com/schoolism.php?action=1</item>
@@ -55,7 +55,7 @@
         <item>http://mobile.opium-makassar.com/profil.php?action=1</item>
         <item>http://mobile.opium-makassar.com/more.php?action=1</item>
         <item>http://mobile.opium-makassar.com/about.php?action=1</item>
-        <item>http://mobile.opium-makassar.com/contact.php?action=1</item>
+        <item>http://mobile.opium-makassar.com/about.php?action=1&amp;contact=1</item>
     </string-array>
     
     <!-- Sosmed -->
